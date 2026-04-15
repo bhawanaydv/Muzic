@@ -285,8 +285,8 @@ const Home = () => {
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-brand">
-          <span className="brand-icon">🎵</span>
-          <span className="brand-text">Melody</span>
+          {/* <span className="brand-icon">🎵</span> */}
+          <span className="brand-text">V-Music</span>
         </div>
         
         <div className="search-bar">
@@ -315,10 +315,10 @@ const Home = () => {
             className={`tab ${activeTab === tab ? 'active' : ''}`}
             onClick={() => setActiveTab(tab)}
           >
-            {tab === 'trending' && '🔥 Trending'}
-            {tab === 'search' && '🔍 Search'}
-            {tab === 'favorites' && `❤️ Favorites (${favorites.length})`}
-            {tab === 'playlists' && `📁 Playlists (${playlists.length})`}
+            {tab === 'trending' && 'Trending'}
+            {tab === 'search' && 'Search'}
+            {tab === 'favorites' && ` Favorites (${favorites.length})`}
+            {tab === 'playlists' && `Playlists (${playlists.length})`}
           </button>
         ))}
       </div>

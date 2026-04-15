@@ -3,6 +3,11 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
+app.use(cors({
+  origin: "https://muzic-nu.vercel.app",
+  credentials: true
+}));
+
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
@@ -47,7 +52,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// Use port 5001 directly to avoid .env loading issues
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
