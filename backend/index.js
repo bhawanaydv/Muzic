@@ -3,8 +3,11 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
+app.use(express.json());
+
 app.use(cors({
   origin: "https://muzic-nu.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
