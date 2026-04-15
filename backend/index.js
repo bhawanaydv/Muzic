@@ -3,13 +3,8 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
-app.use(express.json());
 
-app.use(cors({
-  origin: "https://muzic-nu.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
@@ -22,6 +17,13 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
+
+
+app.use(cors({
+  origin: "https://muzic-nu.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 
 app.use('/api/auth', authRoutes);
